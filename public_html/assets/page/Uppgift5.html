@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>Uppgift 5</div>
-    </body>
+<head>
+	<meta charset="utf-8">
+	<title>Validator</title>
+	<link rel="stylesheet" type="text/css" href="../style/styleUppgift5.css">
+</head>
+<body>
+
+<article class="container">
+	<h1 class="container__title">Text Valideringar</h1>
+	<form class="validation__form">
+		<hr>
+		<label>Person nummer: </label><br>
+		<input type="text" id="idNumber" class="validation__input">
+		<label>
+			Result: <span class="validation__result" id="idNumberResult"></span>
+                </label><br>               
+		<hr>
+                
+		<label>Skottår: </label><br>
+		<input type="text" id="leapYear" class="validation__input">
+		<label>
+			Result: <span class="validation__result" id="leapYearResult"></span>
+		</label><br>
+		<hr>
+                
+		<label>Siffersumma: </label><br>
+		<input type="number" id="numberSum" class="validation__input">
+		<label>
+			Result: <span class="validation__result" id="numberSumResult"></span>
+		</label>
+	</form>
+</article>
+
+<script type="text/javascript" src="../script/scriptUppgift5.js"></script>
+</body>
 </html>
