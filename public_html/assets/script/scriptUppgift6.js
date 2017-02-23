@@ -17,18 +17,20 @@ for(var i = 0; i<signButtonList.length; i++){
 }
 
 function addNumber(){
-    //inserting in array 
-    if(this.innerHTML !=="0"){
-        if(tempIndex %2 === 0){
+        if(this.innerHTML ==="0" && tempIndex %2 === 0){
+            
+        }else if(tempIndex %2 === 0){
             calcArray.push(this.innerHTML);
             console.log("if-sats: "+calcArray.join("+")+ ". tempIndex: "+ tempIndex);
             tempIndex++;
+            updateDisplay(this.innerHTML);
         }else{
             calcArray[tempIndex-1] += this.innerHTML;
             console.log("else-sats: "+calcArray.join("+")+ ". tempIndex: "+ tempIndex);
+            updateDisplay(this.innerHTML);
         }     
-        updateDisplay(this.innerHTML);
-    }
+        
+    
 }
 
 function addSign(){
