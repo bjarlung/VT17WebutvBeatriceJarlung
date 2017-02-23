@@ -28,9 +28,7 @@ function addNumber(){
             calcArray[tempIndex-1] += this.innerHTML;
             console.log("else-sats: "+calcArray.join("+")+ ". tempIndex: "+ tempIndex);
             updateDisplay(this.innerHTML);
-        }     
-        
-    
+        }        
 }
 
 function addSign(){

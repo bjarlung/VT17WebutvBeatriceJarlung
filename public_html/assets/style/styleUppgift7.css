@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+
+body{ 
+    background-image: url(../resource/dark_embroidery.png);
+    line-height: 2em;
+}
+#mudcakePic{
+    width: 500px;
+}
+
+h1{
+    font-size: 5em;
+    padding: 70px;
+   
+}
+a{
+    color: lightseagreen;
+}
+    
+nav{
+
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+section{
+    font-size: 1.2em;
+}
+
+ul{
+    list-style: none;
+}
+#star{
+    color: yellow;
+    font-size: 2em;
+}
+#ingredients{
+    padding-left: 1%;
+    padding-left: 1%;
+    float: left;
+    width: 20%;    
+}
+#instructions{
+    padding-left: 5%;
+    padding-right: 5%;
+    float: left;
+    width: 58%;  
+}
+#starRating{
+    float: left;
+    width: 100%;
+}
+#infoMC{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 1%;
+    padding-top: 2%;
+    font-size: 1.2em; 
+}
+
+
+@media(max-width: 500px){
+    
+    
+}
