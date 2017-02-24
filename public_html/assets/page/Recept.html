@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../style/styleUppgift7.css">
     </head>
-    <body>
+
         <article id="recipe">
             <h1>Recept på kladdkaka</h1>
             <nav>
@@ -15,14 +15,23 @@
             </nav>   
             <section id="ingredients">
                 <h3 id="ingredientsHeader">Ingredienser</h3>
-                <p>Receptet gäller för 14 bitar </p>
+                <p>Receptet gäller för <span id="noOfpieces">12</span> bitar </p>
+                <form>
+                    <select id="selectAmount">
+                        <option class="amountOption" id="value1">6</option>
+                        <option class="amountOption" id="value2">12</option>
+                        <option class="amountOption" id="value3">18</option>
+                        <option class="amountOption" id="value4">24</option>
+                        <option class="amountOption" id="value5">30</option>
+                    </select>
+                </form>
                 <ul>                                
-                    <li>100 g Smör</li>  
-                    <li>2 1/2 dl strösocker</li> 
-                    <li>2 ägg</li> 
-                    <li>1 dl vetemjöl</li> 
-                    <li>3 msk kakao </li> 
-                    <li>1 tsk vaniljsocker </li> 
+                    <li class="ingredient">100 g smör</li>  
+                    <li class="ingredient">2.5 dl strösocker</li> 
+                    <li class="ingredient">2 ägg</li> 
+                    <li class="ingredient">1 dl vetemjöl</li> 
+                    <li class="ingredient">3 msk kakao </li> 
+                    <li class="ingredient">1 tsk vaniljsocker </li> 
                 </ul>               
             </section>
             <section id="instructions">
@@ -40,6 +49,6 @@
                 
             </section>
         </article>
-
+        <script type="text/javascript" src="../script/scriptUppgift7.js"></script>
     </body>
 </html>
