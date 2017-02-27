@@ -10,21 +10,18 @@ body{
     line-height: 2em;
 }
 #mudcakePic{
-    width: 500px;
+    width: 50%;
 }
 
 h1{
     font-size: 5em;
-    padding: 70px;
-   
+    padding: 70px;  
 }
 a{
     color: lightseagreen;
 }
     
 nav{
-
-
     padding-top: 1%;
     padding-bottom: 1%;
 }
@@ -35,7 +32,7 @@ section{
 ul{
     list-style: none;
 }
-#star{
+.star{
     color: yellow;
     font-size: 2em;
 }
@@ -64,25 +61,76 @@ ul{
     padding-top: 2%;
     font-size: 1.2em; 
 }
-#mudcakePicSmall{
-    /*visibility: hidden;*/
-    float: left;
-    width: 20%;
-    padding: 2%   
-}
+
+
+
 #selectAmount{
     padding: 10px;
     width:40px;
     height: 20px;
-
+    color: black;
+}
+#votesRating{
+    float: left;
+    width: 100%;
+    padding: 1%;
+    color: black;
 }
 
 .amountOption{}
 .amount{}
 .ingredient{}
 
+#processing{
+    visibility: hidden;
+    position: relative;
+    background-color: white;
+    color: white;
+    font-size: 0.3em;  
+    border-radius: 100px;
+    animation-name: processingGIF;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes processingGIF{
+    0%{
+        right: 50px;     
+    }100%{
+        right: -50px; 
+        background-color: gray;
+        color: gray;
+    }   
+}
+
+@media(max-width: 900px){
+ 
+    h1{
+       font-size: 3em;
+       padding: 5%;  
+    }
+    #ingredients{
+        padding-left: 5%;
+        width: 15%;    
+    }
+    #instructions{
+    padding: 5%;
+    float: right;
+    width: 60%;  
+    } 
+}
 
 @media(max-width: 500px){
-    
-    
+    h1{
+        float: left;
+        font-size: 2em;
+        padding: 5%;  
+    }
+    #ingredients{
+        width: 90%;    
+    }
+    #instructions{
+        padding: 10%;
+        float: left;
+        width: 80%;  
+    } 
 }
