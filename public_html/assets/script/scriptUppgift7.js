@@ -1,6 +1,6 @@
 "use strict";
 
- console.log("loading javascript");
+//html objects
 var processing = document.getElementById("processing"); 
 var ingredientList = document.getElementsByClassName("ingredient");
 var selectedAmount = document.getElementById("selectAmount");
@@ -8,19 +8,20 @@ var starList = document.getElementsByClassName("star");
 var ratingSection = document.getElementById("votesRating");
 var ratingTag = document.getElementById("rating");
 var noVotesTag =document.getElementById("noVotes");
- 
- window.onload =  setPoints();
- window.onload = setIngredientsFirst();
 
+//setup
+window.onload =  setPoints();
+window.onload = setIngredientsFirst();
+
+//adding event listeners
 selectedAmount.addEventListener("change", setIngredientList);
-
 for(var i=0; i<starList.length; i++){
     starList[i].addEventListener("click", clickStar);
     starList[i].addEventListener("mouseover", hoverStar);
     starList[i].addEventListener("mouseout", resetHover);
-    console.log("for-loop listener");
 }
 
+//function changing color of stars, removing listeners, setting an animation.
 function clickStar(){
     processing.style.visibility= "visible";
     for(var i=0; i<Number(this.id); i++){
@@ -34,18 +35,21 @@ function clickStar(){
     vote(Number(this.id));       
 }
 
+//function filling stars when hovered
 function hoverStar(){
     for(var i=0; i<Number(this.id); i++){
         starList[i].innerHTML = "&starf;";      
     }
 }
 
+//function resetting stars after hover
 function resetHover(){
     for(var i=0; i<starList.length; i++){
         starList[i].innerHTML = "&star;"; 
     }
 }
-//this function sets the amount of ingredients when the page is loaded
+
+//function setting the amount of ingredients when page is loaded
 function setIngredientsFirst(){
     var amount;
     if(localStorage.getItem("cakeSize") === null){
@@ -56,7 +60,7 @@ function setIngredientsFirst(){
     updateIngredients(amount);
 }
 
-//this function changes the amount of ingredients according to users choice
+//function changing the amount of ingredients according to users choice
 function setIngredientList(){          
     var chosenAmount = this.value;        
     localStorage.setItem("cakeSize", chosenAmount);
@@ -75,7 +79,7 @@ function updateIngredients(setAmount){
     document.getElementById("noOfpieces").innerHTML = setAmount;  
 }
 
-//this function creates a list of ingredients for mudcake
+//function creating a list of ingredients for mudcake
 function getMudcake(){
     //creating the necessary ingredients for making mudcake
     var butter = new ingredient(50.0, "g", "smör");
@@ -89,15 +93,12 @@ function getMudcake(){
     return mudcake;
 }
 
-//this function is used to create ingredient-objects
+//function used to create ingredient-objects
 function ingredient(baseAmount, unit, name){
     this.baseAmount = baseAmount;
     this.amount= 0;
     this.unit = unit;
     this.name = name;
-    this.getBaseAmount =function(){
-        return this.baseAmount;
-    };
 }
 
 //ajax-function. Sends vote to API 
@@ -128,8 +129,6 @@ function setPoints(){
             var json = JSON.parse(this.responseText);
             ratingTag.innerHTML = ""+json.rating.toFixed(1);
             noVotesTag.innerHTML = ""+json.votes;
-            console.log(json.rating + " " + json.votes);
-            console.log(this.responseText);  
             processing.style.visibility= "hidden";  
 	}
     };
@@ -138,15 +137,6 @@ function setPoints(){
 	"https://edu.oscarb.se/sjk15/api/recipe/?api_key=736ccc4bedd63f0c&recipe=kladdkaka",
 	true);
     xhttp.send();
-}
-
-
-
-var ratingSection = document.getElementById("votesRating");
-
-function processingRequest(){
-    //processing.style.backgroundColor = "blue";
-    
 }
 
 
