@@ -111,10 +111,13 @@ function vote(points){
             setPoints();
 	}
     };
-    
-    xhttp.open("GET",
-	"https://edu.oscarb.se/sjk15/api/recipe/?api_key=736ccc4bedd63f0c&recipe=kladdkaka&rating="+points,
+    xhttp.open("POST",
+	"http://localhost:8080/RecipeAPI/recipe-service/recipes/30/"+points,
 	true);
+    
+  //  xhttp.open("GET",
+//	"https://edu.oscarb.se/sjk15/api/recipe/?api_key=736ccc4bedd63f0c&recipe=kladdkaka&rating="+points,
+//	true);
     xhttp.send();
 }
 
